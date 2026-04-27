@@ -1,0 +1,13 @@
+:root {
+    /* color */
+    --brand-color: #052946;
+    --body-text-color: white;
+    --sub-brand-color: #006c99;
+
+
+    /* font */
+    --body-text-font-size: 1.5em;
+    --header-font-size: 4em;
+    --navbar-font-size: 1em;
+}
+
