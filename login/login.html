@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>
-            Login
-        </title>
+        <title>Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,34 +12,42 @@
             
             <div class="image-section">
                 <img src="image/freepik__closeup-cafe-portrait-of-coffee-vibrant-fruit-drin__19888.png">
+                <div class="image-overlay">
+                    <p class="image-tagline">"Every cup tells a story."</p>
+                </div>
             </div>
 
             <div class="form-section">
-                <div class="logo-container">
-                    <h4>Add logo design here</h4>
-                </div>
 
-                <h3>Sign In</h3>
+                <div class="logo-container">
+                <!-- Replace this with actual logo -->
+                <div class="logo-placeholder">MS Cafe</div>
+            </div>
+
+                <h2>Welcome Back</h2>
+                <p class="subtitle">Sign in to your account to continue</p>
 
                 <form action="#" class="login-form">
+
                     <div class="input-group">
-                        <label class="label" for="username">USERNAME</label>
-                        <input type="text" id="username" name="username" placeholder="Username" required>
+                        <label class="label" for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
                     </div>
 
                     <div class="input-group">
-                        <label class="label" for="password">PASSWORD</label>
-                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <label class="label" for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="••••••••" required>
+                        <a href="#" class="forgot-link">Forgot password?</a>
                     </div>
 
-                    <button type="submit">Sign in</button>
+                    <button type="submit" class="btn-primary">Sign In</button>
+
                 </form>
 
-                <p>Don't have an account? 
-                    <a href="../register/register.html"><b>Register here</b></a>
-                </p>
+                <p class="switch-link">Don't have an account? <a href="../register/register.html"><b>Register here</b></a></p>
             </div>
 
         </div>
+        
     </body>
 </html>
