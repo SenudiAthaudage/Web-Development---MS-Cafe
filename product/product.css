@@ -91,7 +91,11 @@ header .logo a{
     border-radius: 10px;
     padding: 20px;
     border: 1px;
+<<<<<<< HEAD
     background: #006c99;
+=======
+    background: linear-gradient(to bottom, #006c99, #e6e6e6);
+>>>>>>> mth-homepage
     height: 250px;       /* same height for all */
     object-fit: cover;   /* keeps image nice */
     display: block;
