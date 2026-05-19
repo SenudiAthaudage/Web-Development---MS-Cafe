@@ -1,0 +1,358 @@
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: white;
+  color: #052946;
+}
+
+.nav-left a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #052946;
+  font-size: 14px;
+}
+
+header .logo a{
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #052946;
+}
+
+.btn {
+  background: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.order-button {
+    background: #006c99;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+
+
+.product-button {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+.menu-buttons {
+    margin-top: 40px;
+    padding: 12px 25px;
+    border: 2px solid #052946;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #052946;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.menu-buttons:hover {
+    color: #fff;
+    background-color: #052946;
+    transition: transform 0.5s ease 0.5s;
+}
+
+
+.menu {
+    display: none;   /* hide all menus first */
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* default menu */
+#coffee {
+    display: flex;
+}
+
+/* Card */
+.card {
+    width: 180px;
+    text-align: center;
+    align-items: center;
+}
+
+/* Image box */
+.card img {
+    width: 160px;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px;
+    background: linear-gradient(to bottom, #006c99, #e6e6e6);
+    height: 250px;       /* same height for all */
+    object-fit: cover;   /* keeps image nice */
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Text */
+.card h3 {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #052946;
+    
+}
+
+
+
+
+
+
+/* HOW TO ORDER */
+
+.howto {
+    text-align: center;
+}
+
+.howto h4 {
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.howto h1 {
+    font-size: 50px;
+}
+
+.howto-container {
+    width: 90%;
+    margin: auto;
+}
+
+/* Hover wrapper */
+.hover-box {
+    margin: 20px 0;
+    position: relative;
+}
+
+/* Main banner button */
+.howto-banner {
+    width: 100%;
+    border: none;
+    color: white;
+    background: #052946;
+    padding: 25px;
+    font-size: 32px;
+    border-radius: 20px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hidden content */
+.banner_1 {
+    display: none;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+
+    background: #f5f1ea;
+    padding: 40px;
+    border-radius: 30px;
+}
+
+/* Show content on hover */
+.hover-box:hover .banner_1 {
+    display: flex;
+}
+
+/* Hide button on hover */
+.hover-box:hover .howto-banner {
+    display: none;
+}
+
+/* Text side */
+.banner_1 div {
+    width: 45%;
+}
+
+.banner_1 h4 {
+    font-size: 40px;
+    color: #052946;
+    margin-bottom: 20px;
+}
+
+.banner_1 p {
+    font-size: 24px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Cards container */
+.banner_card_container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Card */
+.banner_card {
+    text-align: center;
+}
+
+.banner_card img {
+    width: 140px;
+    height: 220px;
+    object-fit: cover;
+
+    border-radius: 30px;
+    padding: 15px;
+
+    background: linear-gradient(to bottom, #006c99, #f3d7c3);
+}
+
+.banner_card h3 {
+    margin-top: 10px;
+    color: #222;
+}
+
+
+
+/* 2nd Banner */
+
+/* Hidden content */
+.banner_2 {
+    display: none;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+
+    background: #f5f1ea;
+    padding: 40px;
+    border-radius: 30px;
+}
+
+/* Show content on hover */
+.hover-box:hover .banner_2 {
+    display: flex;
+}
+
+/* Hide button on hover */
+.hover-box:hover .howto-banner {
+    display: none;
+}
+
+/* Text side */
+.banner_2 div {
+    width: 45%;
+}
+
+.banner_2 h4 {
+    font-size: 40px;
+    color: #052946;
+    margin-bottom: 20px;
+}
+
+.banner_2 p {
+    font-size: 24px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.banner_2_title {
+    width: 50%;
+    
+}
+
+/* Cards container */
+.banner_card_container {
+    display: flex;
+    gap: 20px;
+    width: 50%;
+    flex-wrap: wrap;
+}
+
+/* Card */
+.banner_card {
+    text-align: center;
+}
+
+.banner_card_container img {
+    width: 120px;
+    height: 220px;
+    object-fit: cover;
+
+    border-radius: 30px;
+    padding: 15px;
+
+    background: linear-gradient(to bottom, #006c99, #f3d7c3);
+}
+
+.banner_card h3 {
+    margin-top: 10px;
+    color: #222;
+}
+
+
+/* 3rd Banner */
+
+
+
+
+.footer-socialmedia h1 {
+    text-align: center;
+    font-size: 48px;
+    padding-top: 30px;
+}
+
+.footer-socialmedia h4 {
+    font-size: 30px;
+}
+
+.footer-socialmedia {
+  color: #fff;
+  background: #006c99;
+  height: 60vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  padding-left: 50px;
+}
+
+.fa-brands {
+  padding-right: 20px;
+  font-size: 20px;
+  color: #fff;
+}
+
+footer .nav-left-color a {
+  color: #fff;
+  font-size: 20px;
+}
+
+.social-icons i:hover{
+  font-size: 28px;
+  transform: scale(1.5);
+  transition: transform 0.1s ease 0.1s;
+}
+
+.copy-right {
+    text-align: center;
+    padding: 18px;
+    background:  #052946;
+    color: white;
+}
+
+
+.banner_card_sweetness img{
+    width: 420px;
+    height: 580px;
+    object-fit: cover;
+
+    border-radius: 30px;
+    padding: 15px;
+
+    background: linear-gradient(to bottom, #c1272d, #f3d7c3);
+}
