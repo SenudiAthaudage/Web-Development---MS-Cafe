@@ -1,3 +1,17 @@
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+
+
+
+.products_menu {
+    background: #006c99;
+    padding: 20px 0;
+}
+
+
 /* NAVBAR */
 .navbar {
   display: flex;
@@ -37,26 +51,32 @@ header .logo a{
     padding: 10px 18px;
     border-radius: 20px;
     cursor: pointer;
+    text-decoration: none;
 }
-
-
-
 
 .product-button {
     text-align: center;
     margin-bottom: 50px;
 }
 
+.product-button h1 {
+    color: #fff;
+    margin-top: 10px;
+}
 
 .menu-buttons {
     margin-top: 40px;
     padding: 12px 25px;
-    border: 2px solid #052946;
+    border: 1px solid #fff;
     border-radius: 25px;
     background-color: #fff;
     color: #052946;
     font-size: 16px;
     cursor: pointer;
+}
+
+.button_padding {
+    padding: 0 30px;
 }
 
 .menu-buttons:hover {
@@ -88,10 +108,9 @@ header .logo a{
 /* Image box */
 .card img {
     width: 160px;
-    border-radius: 10px;
-    padding: 20px;
-    border: 1px;
-
+    border-radius: 30px;
+    padding: 15px;
+    border: 3px solid #fff;
     height: 250px;       /* same height for all */
     object-fit: cover;   /* keeps image nice */
     display: block;
@@ -103,24 +122,39 @@ header .logo a{
 .card h3 {
     margin-top: 15px;
     font-size: 16px;
-    color: #052946;
+    color: #fff;
     
 }
 
-
-
-
+.order-button {
+    background: #006c99;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
 
 
 /* HOW TO ORDER */
+
+.howto_padding {
+    padding: 40px 0;
+}
+
+.howto-container {
+    padding: 20px 0;
+}
+
 
 .howto {
     text-align: center;
 }
 
-.howto h4 {
-    font-size: 30px;
-    font-weight: normal;
+.howto p {
+    font-size: 20px;
+    font-weight: thin;
 }
 
 .howto h1 {
@@ -136,6 +170,7 @@ header .logo a{
 .hover-box {
     margin: 20px 0;
     position: relative;
+    padding: 10px 0;
 }
 
 /* Main banner button */
@@ -149,12 +184,25 @@ header .logo a{
     border-radius: 20px;
     text-align: left;
     cursor: pointer;
-    transition: 0.3s;
+    
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-/* Hidden content */
-.banner_1 {
-    display: none;
+
+
+.banner_1,
+.banner_2 {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+
+    transition: 
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        visibility 0.5s;
+
+    display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 40px;
@@ -164,15 +212,36 @@ header .logo a{
     border-radius: 30px;
 }
 
-/* Show content on hover */
-.hover-box:hover .banner_1 {
-    display: flex;
+/* Show smoothly */
+.hover-box:hover .banner_1,
+.hover-box:hover .banner_2 {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
-/* Hide button on hover */
-.hover-box:hover .howto-banner {
-    display: none;
+/* Banner button */
+.howto-banner {
+    width: 100%;
+    border: none;
+    color: white;
+    background: #052946;
+    padding: 25px;
+    font-size: 32px;
+    border-radius: 20px;
+    text-align: left;
+    cursor: pointer;
+
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
+
+/* Hide button smoothly */
+.hover-box:hover .howto-banner {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+
 
 /* Text side */
 .banner_1 div {
@@ -210,7 +279,7 @@ header .logo a{
     border-radius: 30px;
     padding: 15px;
 
-    background: linear-gradient(to bottom, #006c99, #f3d7c3);
+    border: #006c99;
 }
 
 .banner_card h3 {
@@ -218,31 +287,6 @@ header .logo a{
     color: #222;
 }
 
-
-
-/* 2nd Banner */
-
-/* Hidden content */
-.banner_2 {
-    display: none;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
-
-    background: #f5f1ea;
-    padding: 40px;
-    border-radius: 30px;
-}
-
-/* Show content on hover */
-.hover-box:hover .banner_2 {
-    display: flex;
-}
-
-/* Hide button on hover */
-.hover-box:hover .howto-banner {
-    display: none;
-}
 
 /* Text side */
 .banner_2 div {
@@ -283,12 +327,14 @@ header .logo a{
     width: 120px;
     height: 220px;
     object-fit: cover;
-
+    display: block;
     border-radius: 30px;
     padding: 15px;
-
-    background: linear-gradient(to bottom, #006c99, #f3d7c3);
+    margin: 0 auto;
+    border: 3px solid #006c99;
 }
+
+
 
 .banner_card h3 {
     margin-top: 10px;
@@ -297,8 +343,6 @@ header .logo a{
 
 
 /* 3rd Banner */
-
-
 
 
 .footer-socialmedia h1 {
@@ -319,6 +363,10 @@ header .logo a{
   justify-content: center;
   font-size: 20px;
   padding-left: 50px;
+}
+
+.social-icons .fa-brands {
+    color: #fff;
 }
 
 .fa-brands {
@@ -353,6 +401,4 @@ footer .nav-left-color a {
 
     border-radius: 30px;
     padding: 15px;
-
-    background: linear-gradient(to bottom, #c1272d, #f3d7c3);
 }
