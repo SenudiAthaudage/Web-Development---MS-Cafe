@@ -1,0 +1,40 @@
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: white;
+  color: #052946;
+}
+
+.nav-left a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #052946;
+  font-size: 14px;
+}
+
+header .logo a{
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #052946;
+}
+
+.btn {
+  background: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.order-button {
+    background: #006c99;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+}

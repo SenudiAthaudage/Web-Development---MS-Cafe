@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Example</title>
+    <link rel="stylesheet" href="order.css">
+
+</head>
+<body>
+    <h1 style="color: #fff;">Cart</h1>
+
+    <!-- Product List -->
+    <div class="product-list">
+
+        <!-- Americano -->
+        <div class="product card text-color">
+            <img src="../img/Americano.JPG" alt="">
+            <h3 style="color: #fff;">Americano</h3>
+            <p style="color: #fff;">$7.99</p>
+
+            <div class="option-group">
+                <label style="color: #fff;">Bean Type</label>
+                <select class="bean">
+                    <option>Arabica</option>
+                    <option>Robusta</option>
+                    <option>Liberica</option>
+                </select>
+            </div>
+
+            <br><br>
+
+            <div class="option-group">
+            <label style="color: #fff;">Sweetness</label>
+            <select class="sweetness">
+                <option>0%</option>
+                <option>25%</option>
+                <option>50%</option>
+                <option>75%</option>
+                <option>100%</option>
+            </select>
+            </div>
+
+            <br><br>
+
+        <div class="toppings-box">
+            <label>
+                <input type="checkbox" class="topping" value="Extra Shot" data-price="2.00"> Extra Shot (+$2.00)
+            </label><br>
+        </div>
+
+            <button onclick="addToCart(this,'Americano',7.99)">Add to Cart</button>
+        </div>
+
+
+        <!-- Espresso -->
+        <div class="product card text-color">
+            <img src="../img/iced_espresso.jpg" alt="">
+            <h3>Espresso</h3>
+            <p>$8.99</p>
+
+            <div class="option-group text-color">
+                <label style="color: #fff;">Bean Type</label>
+                <select class="bean">
+                    <option>Arabica</option>
+                    <option>Robusta</option>
+                    <option>Liberica</option>
+                </select>
+            </div>
+
+            <br><br>
+
+            <div class="option-group text-color">
+            <label style="color: #fff;">Sweetness</label>
+            <select class="sweetness">
+                <option>0%</option>
+                <option>25%</option>
+                <option>50%</option>
+                <option>75%</option>
+                <option>100%</option>
+            </select>
+            </div>
+
+            <br><br>
+
+        <div class="toppings-box">
+            <label>
+                <input type="checkbox" class="topping" value="Extra Shot" data-price="2.00"> Extra Shot (+$2.00)
+            </label> <br>
+            <label>
+                <input type="checkbox" class="topping" value="Whipped Cream" data-price="1.50"> Whipped Cream (+$1.50)
+            </label> <br>
+            <label>
+                <input type="checkbox" class="topping" value="Drizzle" data-price="1.00">Drizzle (+$1.00)
+            </label> <br>
+            <label>
+                <input type="checkbox" class="topping" value="Cinnamon Powder" data-price="0.50">Cinnamon Powder (+$0.50)
+            </label>
+        </div>
+            <button onclick="addToCart(this,'Espresso',8.99)">Add to Cart</button>
+        </div>
+
+
+        <!-- Latte -->
+        <div class="product card text-color">
+            <img src="../img/iced_latte.jpg" alt="">
+            <h3>Latte</h3>
+            <p>$6.99</p>
+
+            <div class="option-group text-color">
+                <label style="color: #fff;">Bean Type</label>
+                <select class="bean">
+                    <option>Arabica</option>
+                    <option>Robusta</option>
+                    <option>Liberica</option>
+                </select>
+            </div>
+
+            <br><br>
+
+            <div class="option-group text-color">
+            <label style="color: #fff;">Sweetness</label>
+            <select class="sweetness">
+                <option>0%</option>
+                <option>25%</option>
+                <option>50%</option>
+                <option>75%</option>
+                <option>100%</option>
+            </select>
+            </div>
+
+            <br><br>
+
+            <div class="toppings-box">
+                <label>
+                    <input type="checkbox" class="topping" value="Drizzle" data-price="1.00">Drizzle (+$1.00)
+                </label> <br>
+                <label>
+                    <input type="checkbox" class="topping" value="Cinnamon Powder" data-price="0.50">Cinnamon Powder (+$0.50)
+                </label>
+            </div>
+            <button onclick="addToCart(this,'Latte',6.99)">Add to Cart</button>
+        </div>
+
+
+        <!-- Capuccino -->
+        <div class="product card text-color">
+            <img src="../img/Capuccino.JPG" alt="">
+            <h3>Capuccino</h3>
+            <p>$5.99</p>
+
+            <div class="option-group text-color">
+                <label style="color: #fff;">Bean Type</label>
+                <select class="bean">
+                    <option>Arabica</option>
+                    <option>Robusta</option>
+                    <option>Liberica</option>
+                </select>
+            </div>
+
+            <br><br>
+
+            <div class="option-group text-color">
+            <label style="color: #fff;">Sweetness</label>
+            <select class="sweetness">
+                <option>0%</option>
+                <option>25%</option>
+                <option>50%</option>
+                <option>75%</option>
+                <option>100%</option>
+            </select>
+            </div>
+
+            <br><br>
+
+            <div class="toppings-box">
+                <label>
+                    <input type="checkbox" class="topping" value="Cinnamon Powder" data-price="0.50">Cinnamon Powder (+$0.50)
+                </label>
+            </div>
+            <button onclick="addToCart(this,'Cappuccino',5.99)">Add to Cart</button>
+
+        </div>
+
+
+        <!-- Mocha -->
+        <div class="product card text-color">
+            <img src="../img/iced_mocha.webp" alt="">
+            <h3>Mocha</h3>
+            <p>$10.99</p>
+
+            <div class="option-group text-color">
+                <label style="color: #fff;">Bean Type</label>
+                <select class="bean">
+                    <option>Arabica</option>
+                    <option>Robusta</option>
+                    <option>Liberica</option>
+                </select>
+            </div>
+
+            <br><br>
+
+            <div class="option-group text-color">
+            <label style="color: #fff;">Sweetness</label>
+            <select class="sweetness">
+                <option>0%</option>
+                <option>25%</option>
+                <option>50%</option>
+                <option>75%</option>
+                <option>100%</option>
+            </select>
+            </div>
+
+            <br><br>
+
+            <div class="toppings-box">
+                <label>
+                    <input type="checkbox" class="topping" value="Whipped Cream" data-price="1.50"> Whipped Cream (+$1.50)
+                </label> <br>
+                <label>
+                    <input type="checkbox" class="topping" value="Drizzle" data-price="1.00">Drizzle (+$1.00)
+                </label>
+            </div>
+            <button onclick="addToCart(this,'Mocha',10.99)">Add to Cart</button>
+        </div>
+
+        <!-- Oat Milk Avocado -->
+        <div class="product card text-color">
+            <img src="../img/oat_avocado.jpg" alt="">
+            <h3>Oat Milk Avocado</h3>
+            <p>$11.99</p>
+
+            <div class="option-group text-color">
+            <label style="color: #fff; text-align: center;">Ice Level</label>
+                <select>
+                    <option>Less Ice</option>
+                    <option>Normal Ice</option>
+                    <option>Extra Ice</option>
+                </select>
+            </div>
+            
+            <div class="option-group text-color">
+            <label style="color: #fff;">Sweetness</label>
+            <select class="sweetness">
+                <option>0%</option>
+                <option>25%</option>
+                <option>50%</option>
+                <option>75%</option>
+                <option>100%</option>
+            </select>
+            </div>
+
+            <br><br>
+            <button onclick="addToCart(this,'Oat Milk Avocado',11.99)">Add to Cart</button>
+        </div>
+
+        <!-- Mix Berry Yogurt -->
+        <div class="product card text-color">
+            <img src="../img/berry.jpg" alt="">
+            <h3>Mix Berry Yogurt</h3>
+            <p>$13.99</p>
+
+            <div class="option-group text-color">
+            <label style="text-align: center; color: #fff;">Ice Level</label>
+                <select>
+                    <option>Less Ice</option>
+                    <option>Normal Ice</option>
+                    <option>Extra Ice</option>
+                </select>
+            </div>
+            
+            <div class="option-group text-color">
+            <label style="color: #fff;">Sweetness</label>
+            <select class="sweetness">
+                <option>0%</option>
+                <option>25%</option>
+                <option>50%</option>
+                <option>75%</option>
+                <option>100%</option>
+            </select>
+            </div>
+
+            <button onclick="addToCart(this,'Mix Berry Yogurt',13.99)">Add to Cart</button>
+        </div>
+
+
+        <!-- Kale Avocado -->
+        <div class="product card text-color">
+            <img src="../img/kale_avocado.jpg" alt="">
+            <h3>Kale Avocado</h3>
+            <p>$12.99</p>
+            
+
+            <div class="option-group text-color">
+            <label class="text-color" style="text-align: center; color: #fff;">Ice Level</label>
+                <select>
+                    <option>Less Ice</option>
+                    <option>Normal Ice</option>
+                    <option>Extra Ice</option>
+                </select>
+            </div>
+            
+            <div class="option-group text-color">
+            <label style="color: #fff;">Sweetness</label>
+            <select class="sweetness">
+                <option>0%</option>
+                <option>25%</option>
+                <option>50%</option>
+                <option>75%</option>
+                <option>100%</option>
+            </select>
+            </div>
+
+            <button onclick="addToCart(this,'Kale Avocado',12.99)">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Cart -->
+    <h2 style="color: #fff;">Shopping Cart</h2>
+    <table id="cartTable">
+        <thead>
+            <tr>
+                <th>Drink</th>
+                <th>Bean</th>
+                <th>Sweetness</th>
+                <th>Toppings</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="cartItems"></tbody>
+    </table>
+    <div id="total" style="color: #fff;">Total: $0.00</div>
+
+    <hr>
+
+        <section class="checkout-section">
+
+        <div class="checkout-card">
+
+        <h2>Checkout</h2>
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Full Name">
+
+        <input
+            type="email"
+            id="customerEmail"
+            placeholder="Email Address">
+
+        <select id="paymentMethod">
+            <option>Cash</option>
+            <option>Credit Card</option>
+            <option>Debit Card</option>
+            <option>TNG eWallet</option>
+            <option>GrabPay</option>
+        </select>
+
+        <button class="place-order-btn"
+                onclick="checkout()">
+            Place Order
+        </button>
+
+    </div>
+
+    <div id="receipt" class="receipt-card"></div>
+
+</section>
+
+    <script src="order.js"></script>
+</body>
+</html>

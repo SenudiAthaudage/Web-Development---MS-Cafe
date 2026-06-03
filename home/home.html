@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="../css/variable.css">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="home.css">
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
 </head>
 <body>
@@ -16,17 +19,14 @@
     <header class="navbar">
         <div class="logo"><a href="">MS cafe</a></div>
         <div class="nav-left">
-            <a href="#">About Us</a>
-            <a href="#">Our Supply</a>
-            <a href="#">Products</a>
+            <a href="../aboutus/aboutus.html">About Us</a>
+            <!-- <a href="../supply/supply.html">Our Supply</a> -->
+            <a href="../product/product.html">Products</a>
         </div>
 
 
-    <!-- <div class="nav-right">
-      <button class="btn">Order online</button>
-    </div> -->
 
-    <button class="order-button">Order online</button>
+    <a href="../order/order.html" class="order-button">Order online</a>
   </header>
 
   <!-- HERO SECTION -->
@@ -43,7 +43,7 @@
         for a rich, smooth flavour. Experience the taste of real coffee,
         done right.
       </p>
-      <button class="cta">Discover Our Coffee →</button>
+      <a href="../product/product.html"><button class="cta">Discover Products →</button></a>
     </div>
 
    
@@ -92,29 +92,49 @@
 
                 </div>
 
-    <button class="all-btn">All products</button>
+            <a href="../product/product.html" class="all-btn">All products</a>
 </section>
 
             <!-- Promotions -->
             <div class="promo-container">
   
             <!-- Left Content -->
-            <div class="promo-text">
-                <h1 class="promo-title">Promotion</h1>
-                <h2 class="promo-subtitle">Get 20% off on your first order!</h2>
-                <p>Use code: <strong>FIRST20</strong> at checkout. Don't miss out on this limited-time offer to enjoy our delicious coffee at a discounted price.</p>
+                <div class="promo-text">
+                    <h1 class="promo-title">Promotion</h1>
+                    <h2 class="promo-subtitle">Get 20% off on your first order!</h2>
+                    <p>Use code: <strong>FIRST20</strong> at checkout. Don't miss out on this limited-time offer to enjoy our delicious coffee at a discounted price.</p>
                 
-                <a href="#" class="promo-button">Order Now</a>
+                    <a href="#" class="promo-button">Order Now</a>
+                </div>
+
+                <!-- Right Image -->
+                <div class="promo-image">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Coffee Image">
+                </div>
+
             </div>
 
-            <!-- Right Image -->
-            <div class="promo-image">
-                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Coffee Image">
-            </div>
-
-            </div>
             <!-- Footer -->
             <footer>
+                <section class="footer-socialmedia">
+                    <h1>MS Cafe</h1>
+                    <h4>How Coffee is meant to be</h4>
+                    <div class="nav-left nav-left-color">
+                        <a href="#">About Us</a><br>
+                        <a href="#">Our Supply</a><br>
+                        <a href="#">Products</a>
+                    </div>
+
+                    <h5>Follow us on social media</h5>
+
+                    <!-- Add font awesome icons -->
+                     <div class="social-icons">
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+
+                </section>
                 <p class="copy-right">@copyright</p>
             </footer>
 
