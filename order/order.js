@@ -226,7 +226,7 @@ function checkout() {
     </div>
 
     <div class="receipt-thankyou">
-        Thank You For Visiting MS Cafe ☕
+        Thank You For Visiting MS Cafe
     </div>
 
 `;

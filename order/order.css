@@ -104,9 +104,9 @@ button {
     border-radius: 5px;
 }
 
-button:hover {
+/* button:hover {
     background-color: #0056b3;
-}
+} */
 
 table {
     margin: 0 auto;
@@ -199,6 +199,7 @@ th {
 .receipt-card p{
     font-size:18px;
     margin:15px 0;
+    color:#0d6e97;
 }
 
 .receipt-total{
@@ -215,4 +216,5 @@ th {
     margin-top:25px;
     font-size:20px;
     font-weight:bold;
+    color:#0d6e97;
 }
