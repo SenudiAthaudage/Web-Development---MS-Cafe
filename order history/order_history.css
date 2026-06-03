@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: #eaf4fb;
+    background-image: url(../img/Background-light.jpg);
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: white;
+    border-right: 1px solid #d1d5db;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 0;
+}
+
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 24px 24px 24px;
+}
+
+.avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: #1a5276;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow: hidden;
+}
+
+.sidebar-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.sidebar-email {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.sidebar-divider {
+    height: 1px;
+    background-color: #d1d5db;
+    margin: 0 24px 16px 24px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 4px;
+    padding: 0 12px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.sidebar-link:hover {
+    background-color: #eaf4fb;
+    color: #1a5276;
+}
+
+.sidebar-link.active {
+    background-color: #eaf4fb;
+    color: #1a5276;
+    font-weight: 700;
+}
+
+.sidebar-icon {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-logout {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #dc2626;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 0 12px;
+}
+
+.sidebar-logout:hover {
+    background-color: #fef2f2;
+}
+
+.orders-content {
+    flex: 1;
+    padding: 40px 60px;
+    overflow-y: auto;
+}
+
+.content-header {
+    margin-bottom: 32px;
+}
+
+.content-header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+}
+
+.content-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.table-wrapper {
+    background-color: white;
+    border-radius: 14px;
+    border: 1px solid #d1d5db;
+    overflow: hidden;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders-table thead {
+    background-color: #f3f8fc;
+    border-bottom: 1px solid #d1d5db;
+}
+
+.orders-table th {
+    padding: 14px 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6b7280;
+    text-align: left;
+}
+
+.orders-table td {
+    padding: 16px 20px;
+    font-size: 14px;
+    color: #1a1a1a;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+}
+
+.items-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.items-list li {
+    font-size: 14px;
+    color: #374151;
+}
+
+.status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.status.completed {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status.pending {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.status.cancelled {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.btn-reorder {
+    padding: 7px 16px;
+    border: 1.5px solid #1a5276;
+    border-radius: 8px;
+    background-color: white;
+    color: #1a5276;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-reorder:hover {
+    background-color: #eaf4fb;
+}

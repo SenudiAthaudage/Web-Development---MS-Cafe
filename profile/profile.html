@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Profile</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="profile.css">
+        <link rel="stylesheet" href="../navbar/navbar.css">
+    </head>
+    <body>
+
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="../home/home.html" class="nav-logo"><img src="../img/logo1.png"></a>
+                <div class="nav-links">
+                    <a href="../home/home.html">Home</a>
+                    <a href="#">Products</a>
+                    <a href="#">About Us</a>
+                    <a href="../contact us/contact_us.html">Contact</a>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <button class="account-btn" id="accountBtn">&#9900;</button>
+
+                <div class="dropdown" id="dropdown">
+
+                    <div id="loggedInDropdown">
+                        <div class="dropdown-header">
+                            Welcome Back <strong id="userName">Name</strong>
+                        </div>
+                        <a class="dropdown-item" href="profile.html">My Profile</a>
+                        <a class="dropdown-item" href="../order history/order_history.html">Order History</a>
+                        <a class="dropdown-item logout" href="../login/login.html" onclick="logout()">Logout</a>
+                    </div> 
+                    <div id="loggedOutDropdown">
+                        <a class="dropdown-item" href="../login/login.html">Login</a>
+                        <a class="dropdown-item" href="../register/register.html">Register</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="dashboard">
+
+            <aside class="sidebar">
+
+                <div class="sidebar-user">
+                    <div class="avatar">JD</div>
+                    <div class="sidebar-user-info">
+                        <span class="sidebar-name">Name</span>
+                        <span class="sidebar-email">example@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-divider"></div>
+
+                <nav class="sidebar-nav">
+                    <a href="profile.html" class="sidebar-link active">
+                        <span class="sidebar-icon">&#128100;</span> My Profile
+                    </a>
+                    <a href="../order history/order_history.html" class="sidebar-link">
+                        <span class="sidebar-icon">&#128722;</span> Order History
+                    </a>
+                </nav>
+
+                <div class="sidebar-divider"></div>
+
+                <a href="../login/login.html" class="sidebar-logout" onclick="logout()">
+                    <span class="sidebar-icon">&#10148;</span> Logout
+                </a>
+
+            </aside>
+
+            <main class="profile-content">
+
+                <div class="content-header">
+                    <h2>My Profile</h2>
+                    <p class="content-subtitle">View and update your personal information</p>
+                </div>
+
+                <form action="#" class="profile-form">
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label class="label" for="firstname">First Name</label>
+                            <input type="text" id="firstname" name="firstname" value="First Name" readonly>
+                        </div>
+                        <div class="input-group">
+                            <label class="label" for="lastname">Last Name</label>
+                            <input type="text" id="lastname" name="lastname" value="Last Name" readonly>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="label" for="email">Email</label>
+                        <input type="email" id="email" name="email" value="example@email.com" readonly>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="label" for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" value="+1 912 345 6789" readonly>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="label" for="birthday">Birthday</label>
+                        <input type="date" id="birthday" name="birthday" value="2000-01-01" readonly>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-edit" id="editBtn" onclick="enableEdit()">Edit Information</button>
+                        <button type="button" class="btn-save" id="saveBtn" onclick="saveEdit()">Save Changes</button>
+                        <button type="button" class="btn-cancel" id="cancelBtn" onclick="cancelEdit()">Cancel</button>
+                    </div>
+
+                </form>
+
+            </main>
+
+        </div>
+
+        <script src="profile.js"></script>
+    </body>
+</html>
