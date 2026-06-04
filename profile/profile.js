@@ -45,7 +45,6 @@ if (user) {
     document.getElementById('lastname').value = lastName;
     document.getElementById('email').value = user.email || '';
     document.getElementById('phone').value = user.phone || '';
-    document.getElementById('birthday').value = user.birthday || '';
 
     // Populate sidebar
     document.querySelector('.sidebar-name').textContent = user.fullname;
@@ -86,12 +85,10 @@ function saveEdit() {
     const firstName = document.getElementById('firstname').value.trim();
     const lastName = document.getElementById('lastname').value.trim();
     const phone = document.getElementById('phone').value.trim();
-    const birthday = document.getElementById('birthday').value;
 
     // Update user object in localStorage
     users[loggedInEmail].fullname = `${firstName} ${lastName}`.trim();
     users[loggedInEmail].phone = phone;
-    users[loggedInEmail].birthday = birthday;
     localStorage.setItem('users', JSON.stringify(users));
 
     // Update sidebar and avatar live
