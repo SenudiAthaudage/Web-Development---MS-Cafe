@@ -5,20 +5,40 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="contact_us.css">
+        <link rel="stylesheet" href="../navbar/navbar.css"
     </head>
     <body>
 
         <nav class="navbar">
             <div class="nav-left">
-                <a href="../home/home.html" class="logo"><img class="logoimg" src="../img/logo1.png" alt="MScafe"> </a>
-                <a href="../home/home.html">Home</a>
-                <a href="#">About Us</a>
-                <a href="#">Products</a>
-                <a href="contact_us.html" class="active">Contact</a>
+                <a href="../home/home.html" class="nav-logo"><img src="../img/logo.PNG"></a>
+                <div class="nav-links">
+                    <a href="../home/home.html">Home</a>
+                    <a href="#">Products</a>
+                    <a href="#">About Us</a>
+                    <a href="../contact us/contact_us.html">Contact</a>
+                </div>
             </div>
 
             <div class="nav-right">
-                <a href="../login/login.html" class="login">Login</a>
+                <a href="../order/order.html"><img class="order-icon" src="../img/shopping-cart.png"> </a>
+                <button class="account-btn" id="accountBtn"><img class="account-icon" src="../img/user1.png"></button>
+
+                <div class="dropdown" id="dropdown">
+
+                    <div id="loggedInDropdown">
+                        <div class="dropdown-header">
+                            Welcome Back <strong id="userName">Name</strong>
+                        </div>
+                        <a class="dropdown-item" href="../profile/profile.html">My Profile</a>
+                        <a class="dropdown-item" href="../order history/order_history.html">Order History</a>
+                        <a class="dropdown-item logout" href="../login/login.html" onclick="logout()">Logout</a>
+                    </div> 
+                    <div id="loggedOutDropdown">
+                        <a class="dropdown-item" href="../login/login.html">Login</a>
+                        <a class="dropdown-item" href="../register/register.html">Register</a>
+                    </div>
+                </div>
             </div>
         </nav>
         <div class="Contact-page">
@@ -74,6 +94,6 @@
             </div>
 
         </div>
-        
+        <script src="../navbar/navbar.js"></script>
     </body>
 </html>

@@ -55,6 +55,20 @@
 
 .nav-right {
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.order-icon {
+    height: 25px;
+    width: 25px;
+    margin-top: 5px;
+}
+.account-icon{
+    height: 20px;
+    width: 20px;
+    margin-bottom: 5px;
 }
 
 .account-btn {

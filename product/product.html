@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="../navbar/navbar.css">
 
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -12,21 +13,38 @@
 <body>
     <!-- banner  -->
     <!-- Navigation bar -->
-    <header class="navbar">
-        <div class="logo">
-            <a href="../home/home.html"><img src="../img/logo.png" alt="MS Cafe Logo"></a>
-        </div>
-        <div class="nav-left">
-            <a href="../home/home.html">Home</a>
-            <a href="../aboutus/aboutus.html">About Us</a>
-            <!-- <a href="../supply/supply.html">Our Supply</a> -->
-            <a href="product.html">Products</a>
-        </div>
+    <nav class="navbar">
+            <div class="nav-left">
+                <a href="../home/home.html" class="nav-logo"><img src="../img/logo.PNG"></a>
+                <div class="nav-links">
+                    <a href="../home/home.html">Home</a>
+                    <a href="#">Products</a>
+                    <a href="#">About Us</a>
+                    <a href="../contact us/contact_us.html">Contact</a>
+                </div>
+            </div>
 
+            <div class="nav-right">
+                <a href="../order/order.html"><img class="order-icon" src="../img/shopping-cart.png"> </a>
+                <button class="account-btn" id="accountBtn"><img class="account-icon" src="../img/user1.png"></button>
 
+                <div class="dropdown" id="dropdown">
 
-    <a href="../order/order.html" class="order-button">Order online</a>
-  </header>
+                    <div id="loggedInDropdown">
+                        <div class="dropdown-header">
+                            Welcome Back <strong id="userName">Name</strong>
+                        </div>
+                        <a class="dropdown-item" href="../profile/profile.html">My Profile</a>
+                        <a class="dropdown-item" href="../order history/order_history.html">Order History</a>
+                        <a class="dropdown-item logout" href="../login/login.html" onclick="logout()">Logout</a>
+                    </div> 
+                    <div id="loggedOutDropdown">
+                        <a class="dropdown-item" href="../login/login.html">Login</a>
+                        <a class="dropdown-item" href="../register/register.html">Register</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
     <!-- Products -->
     <section class="products_menu">
@@ -290,5 +308,6 @@
     
 
     <script src="product.js"></script>
+    <script src="../navbar/navbar.js"></script>
 </body>
 </html>
