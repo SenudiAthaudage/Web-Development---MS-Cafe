@@ -1,19 +1,16 @@
-// Navbar (same as navbar.js — paste this on every page)
-const accountBtn = document.getElementById('accountBtn');
-const dropdown = document.getElementById('dropdown');
-const loggedInDropdown = document.getElementById('loggedInDropdown');
-const loggedOutDropdown = document.getElementById('loggedOutDropdown');
-const userName = document.getElementById('userName');
-
 const loggedInEmail = localStorage.getItem('loggedInUser');
 const users = JSON.parse(localStorage.getItem('users')) || {};
 const user = loggedInEmail ? users[loggedInEmail] : null;
 
-// Navbar dropdown
+const accountBtn = document.getElementById('accountBtn');
+const dropdown = document.getElementById('dropdown');
+const loggedInDropdown = document.getElementById('loggedInDropdown');
+const loggedOutDropdown = document.getElementById('loggedOutDropdown');
+const userNameEl = document.getElementById('userName');
+
 if (user) {
     loggedInDropdown.style.display = 'block';
-    const firstName = user.fullname.split(' ')[0];
-    userName.textContent = firstName;
+    userNameEl.textContent = user.fullname.split(' ')[0];
 } else {
     loggedOutDropdown.style.display = 'block';
 }
@@ -32,34 +29,25 @@ function logout() {
     window.location.href = '../login/login.html';
 }
 
-// ── Profile Page ──────────────────────────────────────────
-
 if (user) {
-    // Split fullname into first and last
     const nameParts = user.fullname.trim().split(' ');
     const firstName = nameParts[0] || '';
     const lastName = nameParts.slice(1).join(' ') || '';
 
-    // Populate profile form fields
     document.getElementById('firstname').value = firstName;
     document.getElementById('lastname').value = lastName;
     document.getElementById('email').value = user.email || '';
     document.getElementById('phone').value = user.phone || '';
 
-    // Populate sidebar
     document.querySelector('.sidebar-name').textContent = user.fullname;
     document.querySelector('.sidebar-email').textContent = user.email;
 
-    // Avatar initials
     const initials = (firstName[0] || '') + (lastName[0] || '');
     document.querySelector('.avatar').textContent = initials.toUpperCase();
 
 } else {
-    // Not logged in — redirect to login
     window.location.href = '../login/login.html';
 }
-
-// ── Edit / Save / Cancel ─────────────────────────────────
 
 const inputs = document.querySelectorAll('.profile-form input');
 const editBtn = document.getElementById('editBtn');
@@ -70,7 +58,7 @@ let originalValues = {};
 
 function enableEdit() {
     inputs.forEach(function(input) {
-        if (input.id !== 'email') { // keep email locked
+        if (input.id !== 'email') {
             originalValues[input.id] = input.value;
             input.removeAttribute('readonly');
         }
@@ -81,21 +69,24 @@ function enableEdit() {
 }
 
 function saveEdit() {
-    // Read updated values
     const firstName = document.getElementById('firstname').value.trim();
     const lastName = document.getElementById('lastname').value.trim();
     const phone = document.getElementById('phone').value.trim();
 
-    // Update user object in localStorage
-    users[loggedInEmail].fullname = `${firstName} ${lastName}`.trim();
-    users[loggedInEmail].phone = phone;
-    localStorage.setItem('users', JSON.stringify(users));
+    // Update localStorage
+    const allUsers = JSON.parse(localStorage.getItem('users')) || {};
+    allUsers[loggedInEmail].fullname = `${firstName} ${lastName}`.trim();
+    allUsers[loggedInEmail].phone = phone;
+    localStorage.setItem('users', JSON.stringify(allUsers));
 
-    // Update sidebar and avatar live
-    document.querySelector('.sidebar-name').textContent = users[loggedInEmail].fullname;
+    // Update sidebar live
+    document.querySelector('.sidebar-name').textContent = allUsers[loggedInEmail].fullname;
     const initials = (firstName[0] || '') + (lastName[0] || '');
     document.querySelector('.avatar').textContent = initials.toUpperCase();
-    userName.textContent = firstName;
+
+    // Update navbar welcome name
+    const userNameEl = document.getElementById('userName');
+    if (userNameEl) userNameEl.textContent = firstName;
 
     inputs.forEach(function(input) {
         input.setAttribute('readonly', true);

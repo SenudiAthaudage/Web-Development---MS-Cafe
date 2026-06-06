@@ -97,6 +97,32 @@
 //     updateCart();
 // }
 
+window.addEventListener('load', function() {
+    const reorderItems = JSON.parse(localStorage.getItem('reorderItems'));
+    if (!reorderItems || reorderItems.length === 0) return;
+
+    reorderItems.forEach(function(item) {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${item.name}</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>None</td>
+            <td>$${item.price.toFixed(2)}</td>
+            <td><button onclick="removeItem(this)">Remove</button></td>
+        `;
+        document.getElementById('cartItems').appendChild(row);
+    });
+
+    updateTotal();
+    localStorage.removeItem('reorderItems');
+
+    // Scroll to cart
+    setTimeout(function() {
+        document.getElementById('cartTable').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 300);
+});
+
 function addToCart(button, name, basePrice) {
 
     const card = button.closest(".product");
@@ -181,6 +207,34 @@ function updateTotal() {
         `Total: $${total.toFixed(2)}`;
 }
 
+function saveOrderToHistory(totalStr) {
+    const orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+    const today = new Date();
+    const dateStr = today.toLocaleDateString('en-US', {
+        year: 'numeric', month: 'long', day: 'numeric'
+    });
+
+    const rows = document.querySelectorAll('#cartItems tr');
+    const items = [];
+    rows.forEach(function(row) {
+        const name = row.children[0].textContent.trim();
+        const price = parseFloat(row.children[4].textContent.replace('$', ''));
+        items.push({ name: name, qty: 1, price: price });
+    });
+
+    const newOrder = {
+        id: 'ORD' + Date.now(),
+        date: dateStr,
+        items: items,
+        total: parseFloat(totalStr.replace('Total: $', '')),
+        status: 'completed'
+    };
+
+    orders.unshift(newOrder);
+    localStorage.setItem('orders', JSON.stringify(orders));
+}
+
 function checkout() {
 
     const name =
@@ -202,32 +256,43 @@ function checkout() {
         return;
     }
 
+    const rows = document.querySelectorAll("#cartItems tr");
+    if (rows.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    saveOrderToHistory(total);
+
     document.getElementById("receipt").innerHTML = `
 
-    <h2>MS Cafe Receipt</h2>
+        <h2>MS Cafe Receipt</h2>
 
-    <p>
-        <strong>Customer:</strong>
-        ${name}
-    </p>
+        <p>
+            <strong>Customer:</strong>
+            ${name}
+        </p>
 
-    <p>
-        <strong>Email:</strong>
-        ${email}
-    </p>
+        <p>
+            <strong>Email:</strong>
+            ${email}
+        </p>
 
-    <p>
-        <strong>Payment:</strong>
-        ${payment}
-    </p>
+        <p>
+            <strong>Payment:</strong>
+            ${payment}
+        </p>
 
-    <div class="receipt-total">
-        ${total}
-    </div>
+        <div class="receipt-total">
+            ${total}
+        </div>
 
-    <div class="receipt-thankyou">
-        Thank You For Visiting MS Cafe
-    </div>
+        <div class="receipt-thankyou">
+            Thank You For Visiting MS Cafe
+        </div>
 
-`;
+    `;
 }
+
+
+
